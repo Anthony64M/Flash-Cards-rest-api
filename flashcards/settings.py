@@ -81,13 +81,22 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_registration',
     'app.apps.AppConfig',
     'cloudinary',
+    'crispy_forms',
     'rest_framework',
-    'rest_framework.authtoken'
     'pyuploadcare.dj',
+    'rest_framework.authtoken'
+
 ]
+# setup cloudinary credentials for django-cloudinary
+cloudinary.config(
+    cloud_name=config('CLOUDINARY_CLOUD_NAME'),
+    api_key=config('CLOUDINARY_API_KEY'),
+    api_secret=config('CLOUDINARY_API_SECRET'),
+    secure=True
+)
+
 UPLOADCARE = {
     'pub_key': '0cabf90972fb0df60637',
     'secret': '49f08f82b117e6fa2a27',
@@ -106,7 +115,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'flashcards.urls'
+ROOT_URLCONF = 'awwwards.urls'
 
 TEMPLATES = [
     {
