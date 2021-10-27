@@ -115,7 +115,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'awwwards.urls'
+ROOT_URLCONF = 'flashcards.urls'
 
 TEMPLATES = [
     {
